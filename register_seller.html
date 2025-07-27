@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register as Supplier - Bhojan Bazaar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .handwritten { font-family: 'Kalam', cursive; }
+    .modern { font-family: 'Inter', sans-serif; }
+    body { background: linear-gradient(135deg, #2E8B57 0%, #3CB371 100%); }
+  </style>
+</head>
+<body class="min-h-screen py-8 px-4">
+  
+  <div class="max-w-2xl mx-auto">
+    <div class="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border-4 border-green-200">
+      
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-green-600 to-blue-600 px-8 py-6 text-white text-center">
+        <div class="text-5xl mb-3">🚚</div>
+        <h1 class="handwritten text-3xl font-bold mb-2">Join as Raw Material Supplier</h1>
+        <p class="modern text-green-100">Supply fresh ingredients to street food vendors</p>
+      </div>
+
+      <div class="p-8">
+        <!-- Registration Form -->
+        <form action="register_seller.php" method="POST" class="space-y-6" id="sellerForm">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="modern block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+              <input type="text" name="seller_name" required class="w-full border-2 border-green-200 rounded-xl px-4 py-3 focus:outline-none focus:border-green-500 modern">
+            </div>
+            
+            <div>
+              <label class="modern block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+              <input type="email" name="email" required class="w-full border-2 border-green-200 rounded-xl px-4 py-3 focus:outline-none focus:border-green-500 modern">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="modern block text-sm font-medium text-gray-700 mb-2">Password *</label>
+              <input type="password" name="password" required class="w-full border-2 border-green-200 rounded-xl px-4 py-3 focus:outline-none focus:border-green-500 modern">
+            </div>
+            
+            <div>
+              <label class="modern block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+              <input type="tel" name="phone" required class="w-full border-2 border-green-200 rounded-xl px-4 py-3 focus:outline-none focus:border-green-500 modern">
+            </div>
+          </div>
+
+          <div>
+            <label class="modern block text-sm font-medium text-gray-700 mb-2">Company/Business Name</label>
+            <input type="text" name="company_name" class="w-full border-2 border-green-200 rounded-xl px-4 py-3 focus:outline-none focus:border-green-500 modern">
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="modern block text-sm font-medium text-gray-700 mb-2">Raw Materials You Supply</label>
+              <select name="business_category" class="w-full border-2 border-green-200 rounded-xl px-4 py-3 focus:outline-none focus:border-green-500 modern">
+                <option value="">Select Category</option>
+                <option value="Vegetables & Fruits">🥕 Vegetables & Fruits</option>
+                <option value="Grains & Pulses">🌾 Grains & Pulses</option>
+                <option value="Spices & Seasonings">🌶️ Spices & Seasonings</option>
+                <option value="Dairy Products">🥛 Dairy Products</option>
+                <option value="Meat & Poultry">🍖 Meat & Poultry</option>
+                <option value="Cooking Oil & Ghee">🫗 Cooking Oil & Ghee</option>
+                <option value="Packaging Materials">📦 Packaging Materials</option>
+              </select>
+            </div>
+            
+            <div>
+              <label class="modern block text-sm font-medium text-gray-700 mb-2">Supply Area</label>
+              <input type="text" name="supply_area" placeholder="City/Area you supply to" class="w-full border-2 border-green-200 rounded-xl px-4 py-3 focus:outline-none focus:border-green-500 modern">
+            </div>
+          </div>
+
+          <!-- Benefits Box -->
+          <div class="bg-green-50 border-2 border-green-200 rounded-xl p-6">
+            <h3 class="handwritten text-lg font-bold text-green-800 mb-3">🎯 Supplier Benefits</h3>
+            <ul class="modern text-sm text-green-700 space-y-2">
+              <li>✅ Connect with 500+ street food vendors</li>
+              <li>✅ List unlimited products for free</li>
+              <li>✅ Manage orders from dashboard</li>
+              <li>✅ Build reputation through vendor ratings</li>
+              <li>✅ Direct WhatsApp/phone communication</li>
+              <li>✅ Increase your raw material sales</li>
+            </ul>
+          </div>
+
+          <div class="flex items-center space-x-3">
+            <input type="checkbox" required class="h-5 w-5 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+            <label class="modern text-sm text-gray-600">
+              I agree to provide authentic raw materials and follow <a href="#" class="text-green-600 hover:underline">quality standards</a>
+            </label>
+          </div>
+
+          <button type="submit" class="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white py-4 px-6 rounded-xl font-bold modern text-lg transition-all duration-300 transform hover:scale-105">
+            🚚 Register as Supplier
+          </button>
+        </form>
+
+        <!-- Login Link -->
+        <div class="mt-8 text-center border-t pt-6">
+          <p class="modern text-gray-600">Already have a supplier account?</p>
+          <a href="login.html" class="modern text-green-600 hover:text-green-800 font-semibold">Login to your account</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

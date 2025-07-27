@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register as Vendor - Bhojan Bazaar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    .handwritten { font-family: 'Kalam', cursive; }
+    .modern { font-family: 'Inter', sans-serif; }
+    body { background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%); }
+  </style>
+</head>
+<body class="min-h-screen py-8 px-4">
+  
+  <div class="max-w-2xl mx-auto">
+    <div class="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border-4 border-orange-200">
+      
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-orange-600 to-red-600 px-8 py-6 text-white text-center">
+        <div class="text-5xl mb-3">🧑‍🍳</div>
+        <h1 class="handwritten text-3xl font-bold mb-2">Join as Street Food Vendor</h1>
+        <p class="modern text-orange-100">Get access to fresh raw materials and ingredients</p>
+      </div>
+
+      <div class="p-8">
+        <!-- Registration Form -->
+        <form action="register_shop.php" method="POST" class="space-y-6" id="shopForm">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="modern block text-sm font-medium text-gray-700 mb-2">Business/Stall Name *</label>
+              <input type="text" name="shop_name" required class="w-full border-2 border-orange-200 rounded-xl px-4 py-3 focus:outline-none focus:border-orange-500 modern">
+            </div>
+            
+            <div>
+              <label class="modern block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+              <input type="email" name="email" required class="w-full border-2 border-orange-200 rounded-xl px-4 py-3 focus:outline-none focus:border-orange-500 modern">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="modern block text-sm font-medium text-gray-700 mb-2">Password *</label>
+              <input type="password" name="password" required class="w-full border-2 border-orange-200 rounded-xl px-4 py-3 focus:outline-none focus:border-orange-500 modern">
+            </div>
+            
+            <div>
+              <label class="modern block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+              <input type="tel" name="phone" required class="w-full border-2 border-orange-200 rounded-xl px-4 py-3 focus:outline-none focus:border-orange-500 modern">
+            </div>
+          </div>
+
+          <div>
+            <label class="modern block text-sm font-medium text-gray-700 mb-2">Stall/Business Location *</label>
+            <textarea name="address" rows="3" required class="w-full border-2 border-orange-200 rounded-xl px-4 py-3 focus:outline-none focus:border-orange-500 modern" placeholder="Street address, area, city"></textarea>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="modern block text-sm font-medium text-gray-700 mb-2">Business Type</label>
+              <select name="business_type" class="w-full border-2 border-orange-200 rounded-xl px-4 py-3 focus:outline-none focus:border-orange-500 modern">
+                <option value="">Select Business Type</option>
+                <option value="Street Food Stall">🏪 Street Food Stall</option>
+                <option value="Food Cart">🛒 Food Cart</option>
+                <option value="Mobile Vendor">🚐 Mobile Vendor</option>
+                <option value="Market Stall">🏬 Market Stall</option>
+                <option value="Food Truck">🚚 Food Truck</option>
+              </select>
+            </div>
+            
+            <div>
+              <label class="modern block text-sm font-medium text-gray-700 mb-2">Food Category</label>
+              <select name="food_category" class="w-full border-2 border-orange-200 rounded-xl px-4 py-3 focus:outline-none focus:border-orange-500 modern">
+                <option value="">Select Food Category</option>
+                <option value="Chaat & Snacks">🥨 Chaat & Snacks</option>
+                <option value="South Indian">🥞 South Indian</option>
+                <option value="North Indian">🍛 North Indian</option>
+                <option value="Chinese">🥡 Chinese</option>
+                <option value="Beverages">🧃 Beverages</option>
+                <option value="Sweets & Desserts">🍰 Sweets & Desserts</option>
+                <option value="Fast Food">🍔 Fast Food</option>
+                <option value="Regional Cuisine">🍜 Regional Cuisine</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Benefits Box -->
+          <div class="bg-orange-50 border-2 border-orange-200 rounded-xl p-6">
+            <h3 class="handwritten text-lg font-bold text-orange-800 mb-3">🎯 Vendor Benefits</h3>
+            <ul class="modern text-sm text-orange-700 space-y-2">
+              <li>✅ Access to verified raw material suppliers</li>
+              <li>✅ Fresh ingredients at wholesale prices</li>
+              <li>✅ Direct contact with suppliers via WhatsApp</li>
+              <li>✅ Rate and review suppliers for quality</li>
+              <li>✅ Build trusted supplier network</li>
+              <li>✅ Request bulk quantities for better deals</li>
+            </ul>
+          </div>
+
+          <div class="flex items-center space-x-3">
+            <input type="checkbox" required class="h-5 w-5 text-orange-600 focus:ring-orange-500 border-gray-300 rounded">
+            <label class="modern text-sm text-gray-600">
+              I agree to maintain food safety standards and follow <a href="#" class="text-orange-600 hover:underline">vendor guidelines</a>
+            </label>
+          </div>
+
+          <button type="submit" class="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white py-4 px-6 rounded-xl font-bold modern text-lg transition-all duration-300 transform hover:scale-105">
+            🧑‍🍳 Register as Vendor
+          </button>
+        </form>
+
+        <!-- Login Link -->
+        <div class="mt-8 text-center border-t pt-6">
+          <p class="modern text-gray-600">Already have a vendor account?</p>
+          <a href="login.html" class="modern text-orange-600 hover:text-orange-800 font-semibold">Login to your account</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
