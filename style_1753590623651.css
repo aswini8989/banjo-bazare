@@ -1,0 +1,197 @@
+/* style.css - New "More Best" Version */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --primary-color: #4CAF50; /* Green */
+    --primary-dark: #388E3C;
+    --secondary-color: #2196F3; /* Blue */
+    --secondary-dark: #1976D2;
+    --background-color: #e8f5e9; /* Light green background */
+    --card-background: #ffffff;
+    --text-color: #333;
+    --light-text-color: #f0f0f0;
+    --border-color: #ddd;
+    --input-focus-border: #81C784;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-color);
+    overflow: hidden; /* For background circles */
+    position: relative;
+}
+
+/* Subtle background circles animation */
+body::before, body::after {
+    content: '';
+    position: absolute;
+    background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+    opacity: 0.1;
+    border-radius: 50%;
+    animation: floatCircles 15s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+body::before {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 15%;
+}
+
+body::after {
+    width: 250px;
+    height: 250px;
+    bottom: 5%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+@keyframes floatCircles {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(20px, 30px) scale(1.05); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px; /* Constrain width */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: var(--card-background);
+    padding: 35px 45px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--shadow-medium);
+    width: 100%;
+    animation: cardEntrance 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes cardEntrance {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    color: var(--primary-dark);
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px; /* Adjust line position */
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    outline: none;
+    background-color: #f9f9f9;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    background-color: var(--card-background);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 14px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.05em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--shadow-medium);
+}
+
+.link-text {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9em;
+}
+
+.link-text a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.link-text a:hover {
+    color: var(--secondary-dark);
+    text-decoration: underline;
+}

@@ -1,0 +1,95 @@
+✅ index.html – Homepage (Auto Load)
+What it Does:
+
+Welcome page introducing Bhojan Bazaar with traditional + modern fusion UI
+
+Auto-starts on page load
+
+Buttons for: “Register as Vendor”, “Register as Supplier”, “Login”
+
+✅ register_seller.html & register_shop.html – Registration Pages
+What it Does:
+
+Two dedicated registration pages:
+
+Seller (Vendor) registration: name, contact, area
+
+Shop (Supplier) registration: shop name, materials, area, contact
+
+Includes:
+
+Register button (POST to PHP backend)
+
+“Already have an account?” → Links to login.html
+
+✅ login.html – Login Page
+What it Does:
+
+Unified login page for both roles
+
+Authenticates credentials with login.php
+
+Redirects:
+
+Vendor → dashboard_seller_view.php
+
+Supplier → dashboard_shop_view.php
+
+✅ dashboard_seller_view.php – Vendor Dashboard
+What it Shows:
+
+List of nearby suppliers (fetched from DB)
+
+Each supplier’s:
+
+Name
+
+Raw materials offered
+
+Price per item
+
+Contact option (WhatsApp/email/phone)
+
+Feature: Vendor can request/order material directly
+
+✅ dashboard_shop_view.php – Supplier Dashboard
+What it Does:
+
+Displays products listed by the supplier
+
+Allows:
+
+Adding new product (name, price, quantity)
+
+Editing existing listings
+
+Shows basic analytics (optional): requests received, stock left
+
+✅ style.css – Unified Traditional+Modern Look
+Colors: earthy tones + lavender/green for trust
+
+Fonts: fusion of handwritten (for headers) and sans-serif (for content)
+
+Mobile-first responsive layout
+
+✅ config.php – Database Connection Config
+Sets up MySQL connection parameters (host, user, db, password)
+
+Used by all PHP files to access DB
+
+✅ register_seller.php, register_shop.php, login.php – Core Logic Handlers
+PHP files to:
+
+Register new users (insert into DB)
+
+Authenticate login
+
+Redirect to proper dashboard
+
+Handles form validation + DB errors
+
+🔐 Admin Features (Optional Add-on)
+Feature	Purpose
+🛠 Add Admin Page	To verify and block suppliers if needed
+🧪 Export Reports	See monthly material flow
+🧾 View All Vendors	Admin panel for data governance
